@@ -1,4 +1,4 @@
-# VRM21 Discrete Wavelet Transform
+# VRM21 Discrete Wavelet Transform Module FPGA
 
 An FPGA-oriented RTL implementation of a configurable Discrete Wavelet Transform (DWT) and Inverse Discrete Wavelet Transform (IDWT) processing architecture.
 
