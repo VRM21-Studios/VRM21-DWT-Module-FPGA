@@ -189,6 +189,8 @@ See:
 
 for additional information.
 
+---
+
 ## Fixed-Point Representation
 
 The DSP datapath uses fixed-point arithmetic.
