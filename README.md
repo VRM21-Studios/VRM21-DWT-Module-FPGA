@@ -162,6 +162,8 @@ This approach allows the same hardware accelerator to be reused for deeper wavel
 
 The decomposition depth is therefore controlled primarily by the software processing flow and available system resources.
 
+---
+
 ## Runtime Wavelet Configuration
 
 Wavelet coefficients are stored in hardware registers and configured through AXI4-Lite.
