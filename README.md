@@ -6,6 +6,18 @@ The project provides reusable single-stage hardware accelerators based on a Quad
 
 Although the RTL architecture implements a single transform stage, deeper multi-level wavelet decomposition can be constructed by repeatedly processing the low-frequency approximation output through the same hardware accelerator under software control.
 
+---
+
+## Motivation
+
+This project was developed as part of a self-directed exploration of feature extraction and data transformation for hardware-oriented AI and signal-processing applications.
+
+Unlike frequency-domain transforms such as the FFT, the Discrete Wavelet Transform provides a different representation of data through multiresolution analysis. This made it a useful subject for exploring how signal features can be extracted and transformed before being used by higher-level computational systems.
+
+The project also investigates how a mathematically structured transform can be decomposed into reusable RTL building blocks and implemented efficiently in FPGA hardware.
+
+---
+
 ## Features
 
 * Single-stage DWT analysis accelerator.
@@ -22,6 +34,8 @@ Although the RTL architecture implements a single transform stage, deeper multi-
 * Software-controlled iterative multi-level decomposition.
 * RTL simulation with CSV result generation.
 * FPGA functional validation using a PYNQ-based environment.
+
+---
 
 ## Architecture Overview
 
@@ -99,6 +113,8 @@ The reconstructed stereo output is:
 ```text
 {Out_R, Out_L}
 ```
+
+---
 
 ## Multi-Level Wavelet Decomposition
 
@@ -196,6 +212,8 @@ Further details are available in:
 
 [`docs/fixed_point_format.md`](docs/fixed_point_format.md)
 
+---
+
 ## RTL Dependencies
 
 This repository builds on reusable filter-bank components provided by other VRM21-Studios repositories.
@@ -224,6 +242,8 @@ The QMF processing architecture also relies on FIR filtering infrastructure asso
 [VRM21-Studios/FIR-Module-FPGA](https://github.com/VRM21-Studios/FIR-Module-FPGA?utm_source=chatgpt.com)
 
 This repository focuses on the wavelet-transform control, data formatting, decimation, interpolation, and AXI integration layers rather than duplicating the underlying FIR implementation.
+
+---
 
 ## Repository Structure
 
@@ -266,6 +286,8 @@ VRM21-Discrete-Wavelet-Transform/
 └── README.md
 ```
 
+---
+
 ## Main RTL Modules
 
 ### `vrm_dwt_axi.v`
@@ -305,6 +327,8 @@ An AXI4-Stream-compatible interpolator used by the IDWT processing path.
 
 The module performs two-times interpolation by inserting zero-valued samples between valid input samples.
 
+---
+
 ## Simulation
 
 The repository provides dedicated SystemVerilog testbenches for both transform directions.
@@ -330,6 +354,8 @@ results/
 ```
 
 The repository also includes time-domain and frequency-domain visualizations derived from the generated simulation results.
+
+---
 
 ## Python Environment
 
@@ -358,6 +384,8 @@ pip install -r requirement.txt
 ```
 
 For the tested development environment, Python 3.11.9 is the reference version.
+
+---
 
 ## FPGA Validation
 
@@ -392,6 +420,8 @@ Detailed documentation is available in the [`docs/`](docs/) directory.
 | [`limitations.md`](docs/limitations.md)                             | Current architectural limitations         |
 | [`verification.md`](docs/verification.md)                           | RTL simulation and FPGA validation        |
 
+---
+
 ## Current Scope
 
 The current implementation focuses on a configurable single-stage DWT and IDWT hardware architecture.
@@ -404,9 +434,13 @@ The hardware coefficient register architecture currently targets wavelets compat
 
 See [`docs/limitations.md`](docs/limitations.md) for additional implementation constraints.
 
+---
+
 ## License
 
 This project is distributed under the terms of the repository's included license.
+
+---
 
 ## Related Projects
 
